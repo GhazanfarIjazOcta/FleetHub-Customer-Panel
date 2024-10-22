@@ -12,20 +12,15 @@ import MaintenanceLogo from "../../../assets/Layout/pajamas_issue-type-maintenan
 import FuelLogo from "../../../assets/Layout/lucide_fuel.png";
 import SettingLogo from "../../../assets/Layout/settings.png";
 import LogoutLogo from "../../../assets/Layout/Left_icon.png";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Sidebar2({ onClose }) {
   const navigate = useNavigate();
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
   const [selectedItem, setSelectedItem] = useState(null);
 
   const listItems = [
     { text: "Dashboard", icon: DashboardLogo, route: "dashboardmain" },
-    // { text: "User Management", icon: UserLogo, route: "/user-management" },
-    // { text: "Vehicle Management", icon: VehicleLogo, route: "/vehicle-management" },
-    // { text: "Device Management", icon: DeviceLogo, route: "/device-management" },
-    // { text: "Driver Management", icon: DriverLogo, route: "/driver-management" },
-    // { text: "Trip Management", icon: TripLogo, route: "/trip-management" },
     { text: "Maintenance Scheduling", icon: MaintenanceLogo, route: "maintenance-scheduling" },
     { text: "Fuel Management", icon: FuelLogo, route: "fuel-management" },
     { text: "Setting", icon: SettingLogo, route: "setting" },
@@ -33,34 +28,31 @@ function Sidebar2({ onClose }) {
 
   // Synchronize the selected item with the current route
   useEffect(() => {
-    const currentItemIndex = listItems.findIndex(item => item.route === location.pathname);
+    const currentItemIndex = listItems.findIndex(item => item.route === location.pathname.split('/').pop());
     if (currentItemIndex !== -1) {
       setSelectedItem(currentItemIndex);
+    } else {
+      setSelectedItem(null); // Reset if not found
     }
   }, [location.pathname]); // Run when location changes
 
   const handleListItemClick = (index, route) => {
-    setSelectedItem(index);
-    console.log("here is the index" , index)
+    setSelectedItem(index); // Update the selected item
     navigate(route);
     onClose(); // Close the sidebar when an item is clicked
- 
   };
-  
 
   return (
     <Box
       sx={{
         width: { xs: '70vw', sm: '40vw', md: '40vw' },
         height: { xs: '97%', sm: '97%', md: '97%' },
-        // maxHeight: '100vh',
         position: 'fixed',
         top: 0,
         left: 0,
         backgroundColor: "#15294E",
         display: "flex",
         flexDirection: "column",
-        // justifyContent: "space-between",
         padding: 'clamp(0.5rem, 1vw, 1rem)',
         boxShadow: "2px 0 5px rgba(0,0,0,0.5)",
         overflowY: 'auto',
@@ -69,7 +61,7 @@ function Sidebar2({ onClose }) {
     >
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Box display="flex" justifyContent="center" mb={0}>
-          <img src={Ukeylogo} alt="logo" style={{ width: '100%', maxWidth: '120px' , marginBottom: "2px"}} />
+          <img src={Ukeylogo} alt="logo" style={{ width: '100%', maxWidth: '120px', marginBottom: "2px" }} />
         </Box>
         <IconButton onClick={onClose} sx={{ color: 'white' }}>
           <CloseIcon />
