@@ -1,0 +1,21 @@
+/* MyCalendar.module.css */
+.calendarContainer {
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scroll on mobile */
+}
+
+@media only screen and (max-width: 768px) {
+  .rbc-time-view, .rbc-month-view {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+  .rbc-month-view {
+    .rbc-header {
+      font-size: 12px;
+    }
+    .rbc-row {
+      .rbc-date-cell {
+        font-size: 12px;
+      }
+    }
+  }
+}
