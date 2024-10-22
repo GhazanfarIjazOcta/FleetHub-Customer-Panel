@@ -384,6 +384,7 @@ export const settingStyles = {
 
   },
   header: { height: "100%", width: "100%" ,  overflowY: "auto", },
+  
   profilePaper: {
     boxShadow: "none",
     height: "88%",

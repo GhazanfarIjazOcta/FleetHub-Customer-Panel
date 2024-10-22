@@ -59,17 +59,17 @@ const Chat = () => {
   return (
     <Box
       sx={{
-        height: "80%",
+        height: { lg: "83%", xs: "90%" },
         borderRadius: "4px",
 
-        position: "relative",
+        position: "fixed",
         mt: { xs: 11, sm: 12, md: 12, lg: 12 },
         // Adjust padding based on the screen size
         px: { xs: 2, sm: 2, md: 2, lg: 0 }, // Remove padding at larger screens where sidebar becomes toggle
         ml: { xs: 0, sm: 0, md: 0, lg: 0, xl: 0 }, // Leave space for the sidebar on larger screens
         overflow: "none", // Prevent overflowing horizontally and vertically
         width: "99%", // Ensure it takes full width
-        width: { lg: "99%", xs: "90%" }, // Ensure it takes full width
+        width: { lg: "81.5%", xs: "90%" }, // Ensure it takes full width
         // maxWidth: "1200px", // Set a max width as needed>
         //             background: "#F8DE7E",
         //   background: "#F8F8FF",
@@ -83,7 +83,7 @@ const Chat = () => {
         {matchesMdDown && (
           <Grid item xs={1}>
             <IconButton
-              sx={{ ml: 1 }}
+              sx={{ ml: 33 }}
               color="inherit"
               aria-label={drawerOpen ? "close drawer" : "open drawer"}
               onClick={handleToggleDrawer}
@@ -106,6 +106,7 @@ const Chat = () => {
             width: "300px",
             flexShrink: 0,
             display: { xs: matchesMdDown ? "block" : "none", sm: "block" },
+            
           }}
           PaperProps={{
             style: {

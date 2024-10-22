@@ -74,9 +74,9 @@ import {
     };
   
     return (
-      <Stack>
+      <Stack >
         
-        <Stack justifyContent={"space-between"} direction={"row"}>
+        <Stack justifyContent={"space-between"} direction={"row"} >
       <Box sx={{ ...headerStyle }}>
         {/* Replaced user name and image with the search bar */}
         <TextField
@@ -86,7 +86,7 @@ import {
           sx={{
             flex: 1, // Allows the search bar to take available space
             marginRight: "1rem", // Space between search bar and avatar
-            width: {lg:"auto" , xs:"200px" , sm:"250px"}
+            width: { xl:"330px", lg:"235px", md:"240px" , sm:"200px",  xs:"200px"}
           }}
         />
     
