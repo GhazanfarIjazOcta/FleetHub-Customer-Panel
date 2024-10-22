@@ -86,7 +86,7 @@ import {
           sx={{
             flex: 1, // Allows the search bar to take available space
             marginRight: "1rem", // Space between search bar and avatar
-            width: {lg:"300px" , xs:"200px"}
+            width: {lg:"auto" , xs:"200px" , sm:"250px"}
           }}
         />
     
