@@ -91,11 +91,11 @@ const ChatView = ({
   projectName,
 }) => {
   const headerStyle = {
-    
+    padding: {lg:"10px", xs:"auto"},
     display: "flex",
     alignItems: "center",   
-    height: {xs:"5px" , lg:"auto"},
-    mb:2.5
+    height: {xs:"10px" , lg:"auto"},
+    mb:{xs:2.5 , lg:0 }
   };
 
   // Use dummy messages if messages prop is empty
@@ -104,7 +104,7 @@ const ChatView = ({
 
 
   return (
-    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"87%" , xs:"78%"}}  position={{lg:"relative" , xs:"fixed"}}>
+    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"80%" , xs:"78%"}}  position={{lg:"relative" , xs:"fixed"}}>
       <Stack justifyContent={"space-between"} direction={"row"}>
         <Box sx={{ ...headerStyle }}>
           <Avatar
