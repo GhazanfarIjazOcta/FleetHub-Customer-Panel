@@ -39,62 +39,99 @@ function DashboardHistoryCard() {
 
   return (
     <Card sx={{ padding: '16px', borderRadius: '12px', boxShadow: 3  , mt: 0}}>
-      <CardHeader 
-        title={<Typography variant="h5">History</Typography>}
-        action={
-          // <Tabs>
-          //   <Tab label="Today" />
-          //   <Tab label="Last Week" />
-          //   <Tab label="Last Month" />
-          // </Tabs>
-          <Box display="flex" justifyContent="flex-end">
-          <ButtonGroup variant="outlined" aria-label="outlined button group" sx={{ border: '1px  #ff9800' }}>
-            <Button
-              onClick={() => setSelected('Today')}
-              sx={{
-                // backgroundColor: selected === 'Today' ? '#ff9800' : 'transparent',
-                color: selected === 'Today' ? '#ff9800' : 'inherit',
-                borderColor: '#ff9800', // Orange border color
-                '&:hover': {
-                  backgroundColor: selected === 'Today' ? '#transparent' : 'rgba(255, 152, 0, 0.1)', // Change on hover
-                },
-              }}
-            >
-              Today
-            </Button>
-    
-            <Button
-              onClick={() => setSelected('Last Week')}
-              sx={{
-                // backgroundColor: selected === 'Last Week' ? '#ff9800' : 'transparent',
-                color: selected === 'Last Week' ? '#ff9800' : 'inherit',
-                borderColor: '#ff9800', // Orange border color
-                '&:hover': {
-                  backgroundColor: selected === 'Last Week' ? '#transparent' : 'rgba(255, 152, 0, 0.1)', // Change on hover
-                },
-              }}
-            >
-              Last Week
-            </Button>
-    
-            <Button
-              onClick={() => setSelected('Last Month')}
-              sx={{
-                // backgroundColor: selected === 'Last Month' ? '#ff9800' : 'transparent',
-                color: selected === 'Last Month' ? '#ff9800' : 'inherit',
-                borderColor: '#ff9800', // Orange border color
-                '&:hover': {
-                  backgroundColor: selected === 'Last Month' ? '#transparent' : 'rgba(255, 152, 0, 0.1)', // Change on hover
-                },
-              }}
-            >
-              Last Month
-            </Button>
-          </ButtonGroup>
-        </Box>
+    <CardHeader 
+  title={
+    <Typography 
+      variant="h5" 
+      sx={{
+        fontSize: {
+          xs: '1.25rem', // Mobile view
+          sm: '1.5rem',  // Tablet view
+          md: '1.75rem', // Laptop view
+          lg: '2rem',    // Desktop view
         }
-        sx={{ paddingBottom: 2 }}
-      />
+      }}
+    >
+      History
+    </Typography>
+  }
+  action={
+    <Box display="flex" justifyContent="flex-end">
+      <ButtonGroup variant="outlined" aria-label="outlined button group" sx={{ border: '1px  #ff9800' }}>
+        <Button
+          onClick={() => setSelected('Today')}
+          sx={{
+            fontSize: {
+              xs: '0.7rem', // Mobile view
+              sm: '0.8rem', // Tablet view
+              md: '0.9rem', // Laptop view
+            },
+            padding: {
+              xs: '5px 10px', // Mobile view
+              sm: '6px 12px', // Tablet view
+              md: '8px 16px', // Laptop view
+            },
+            color: selected === 'Today' ? '#ff9800' : 'inherit',
+            borderColor: '#ff9800',
+            '&:hover': {
+              backgroundColor: selected === 'Today' ? 'transparent' : 'rgba(255, 152, 0, 0.1)',
+            },
+          }}
+        >
+          Today
+        </Button>
+        <Button
+          onClick={() => setSelected('Last Week')}
+          sx={{
+            fontSize: {
+              xs: '0.6rem',
+              sm: '0.8rem',
+              md: '0.9rem',
+            },
+            padding: {
+              xs: '4px 9px',
+              sm: '6px 12px',
+              md: '8px 16px',
+            },
+            color: selected === 'Last Week' ? '#ff9800' : 'inherit',
+            borderColor: '#ff9800',
+            '&:hover': {
+              backgroundColor: selected === 'Last Week' ? 'transparent' : 'rgba(255, 152, 0, 0.1)',
+            },
+          }}
+        >
+          Last Week
+        </Button>
+        <Button
+          onClick={() => setSelected('Last Month')}
+          sx={{
+            fontSize: {
+              xs: '0.6rem',
+              sm: '0.8rem',
+              md: '0.9rem',
+            },
+            padding: {
+              xs: '4px 9px',
+              sm: '6px 12px',
+              md: '8px 16px',
+            },
+            color: selected === 'Last Month' ? '#ff9800' : 'inherit',
+            borderColor: '#ff9800',
+            '&:hover': {
+              backgroundColor: selected === 'Last Month' ? 'transparent' : 'rgba(255, 152, 0, 0.1)',
+            },
+          }}
+        >
+          Last Month
+        </Button>
+      </ButtonGroup>
+    </Box>
+  }
+  sx={{ paddingBottom: 2 }}
+/>
+
+
+      
       <Divider sx={{ marginBottom: '16px' }} />
 
       <Grid container spacing={2}>
