@@ -29,7 +29,7 @@ function CustomToolbar(props) {
   };
 
   const getButtonStyles = (view) => ({
-    width: "60px",
+    width: "70px",
     height: "28px",
     backgroundColor: selectedView === view ? "#F38712" : "#F4F4F5",
     display: "flex",
@@ -66,7 +66,7 @@ function CustomToolbar(props) {
           alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
-          maxWidth: "250px",
+          maxWidth: {lg:"250px" , xs:"300px"},
           marginBottom: { xs: 2, sm: 0 },
         }}
       >
@@ -118,8 +118,16 @@ function CustomToolbar(props) {
       </Box>
 
       {/* Right Side: Search field */}
-      <div>
-        <Box sx={{ marginLeft: '10px' }}>
+     
+        <Box sx={{ marginLeft: '10px' ,
+  display: "flex",
+  justifyContent: "center",
+  width: { xs: "100%", sm: "auto" },
+  flexWrap: "wrap",
+
+  mt:{xs:2 , lg:0}
+
+        }}>
           <TextField
             placeholder="Search"
             variant="outlined"
@@ -137,11 +145,14 @@ function CustomToolbar(props) {
               "& .MuiInputBase-root": {
                 height: "44px",
                 width: { xs: "100%", sm: "200px" },
+                justifyContent: "center"
               },
             }}
           />
         </Box>
-      </div>
+ 
+
+
     </Box>
   );
 }
@@ -260,7 +271,7 @@ function MyCalendar() {
           fontSize: "14px"
 
         }}
-      >  <spam display={{xs:"none"}} > <ChevronRight/>{event.title} </spam>
+      >  <spam display={{xs:"none"}} >{event.title} </spam>
         {/* Text is removed for mobile view */}
         <Typography
           sx={{
@@ -289,11 +300,17 @@ function MyCalendar() {
         style={{
           height: isMobile ? "50vh" : "100vh",
           minHeight: "400px", // Ensure minimum height
-          width: "auto"
+       
         }}
         components={{
           toolbar: CustomToolbar,
           event: EventComponent,
+        }}
+
+        onSelectEvent={ (event) =>{
+      setSelectedEvent(event);
+      setOpenModal(true);
+
         }}
         eventPropGetter={eventStyleGetter}
      
