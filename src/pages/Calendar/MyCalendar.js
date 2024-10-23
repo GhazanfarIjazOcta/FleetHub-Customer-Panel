@@ -11,10 +11,12 @@ import {
   TextField,
   Typography,
   Modal,
+  PopoverPaper,
 } from "@mui/material";
 import Right from "../../assets/calander/right.png";
 import Left from "../../assets/calander/left.png";
 import SearchIcon from "@mui/icons-material/Search";
+import { ChevronRight, FormatListBulleted } from "@mui/icons-material";
 
 const localizer = momentLocalizer(moment);
 
@@ -235,6 +237,7 @@ function MyCalendar() {
         height: "40px",
         cursor: "pointer",
       },
+      
     };
   }
 
@@ -252,12 +255,16 @@ function MyCalendar() {
           display: "flex",
           alignItems: "center",
           padding: "5px",
+          cursor: "pointer", // Make boxes clickable
+          color: event.mainColor,
+          fontSize: "14px"
+
         }}
-      >
+      >  <spam display={{xs:"none"}} > <ChevronRight/>{event.title} </spam>
         {/* Text is removed for mobile view */}
         <Typography
           sx={{
-            display: "none", // Hide text for calendar view in mobile
+            display:{xs:"none"} // Hide text for calendar view in mobile
           }}
         >
           {event.title}
@@ -272,21 +279,24 @@ function MyCalendar() {
   };
 
   return (
-    <div className={styles.calendarContainer}>
+    <div className={styles.calendarContainer} >
       <Calendar
         localizer={localizer}
         events={myEventsList}
         startAccessor="start"
         endAccessor="end"
+        defaultView={Views.WEEK} // Set default view to week
         style={{
-          height: isMobile ? "60vh" : "100vh", // Adjust height for mobile
+          height: isMobile ? "50vh" : "100vh",
           minHeight: "400px", // Ensure minimum height
+          width: "auto"
         }}
         components={{
           toolbar: CustomToolbar,
           event: EventComponent,
         }}
         eventPropGetter={eventStyleGetter}
+     
       />
 
       {/* List of Events */}
@@ -324,7 +334,7 @@ function MyCalendar() {
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              width: 400,
+              width: {lg:300, xs:230},
               bgcolor: "background.paper",
               borderRadius: 2,
               boxShadow: 24,
