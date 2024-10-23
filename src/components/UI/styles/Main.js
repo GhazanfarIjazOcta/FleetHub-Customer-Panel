@@ -390,6 +390,7 @@ export const settingStyles = {
     height: "88%",
     width: { lg: "100%", xs: "100%" },// Prevent overflowing horizontally and vertically
     overflowY: "auto",
+    mb: 2
   },
   profileContainer: {
 
@@ -400,6 +401,7 @@ export const settingStyles = {
     justifyContent: "space-between",
     
     width: { lg: "95%", xs: "100%" },// Prevent overflowing horizontally and vertically
+    
     
   },
   profileTextField: { width: {lg:"35%" , xs:"80%"} , marginLeft: "5px" },
