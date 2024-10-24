@@ -126,7 +126,7 @@ function DashboardMainCard() {
           <Grid item xs={13} md={8}>
             {/* Buttons */}
 
-            <Box sx={{ display: "flex", gap: 2 }}>
+            <Box sx={{ display: "flex", gap: 2 , mt:{lg:0 , xs:2} }}>
               {" "}
               {/* Use Box for layout and gap for spacing */}
               <Button

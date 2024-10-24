@@ -1,6 +1,7 @@
 import {
     Box,
     Button,
+    Checkbox,
     Stack,
     TextField,
     Typography,
@@ -49,7 +50,7 @@ function Signup() {
             justifyContent: "flex-end",
             height: "100%",
             minHeight: "100vh", // Ensures the box takes full viewport height
-            width: "100vw",
+            width: "100vw"
         }} >
             <Box
                 className={`sliding-box ${slideLeft ? 'slide-left' : ''}`}
@@ -57,27 +58,17 @@ function Signup() {
                 flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
-                sx={{
-                    width: { lg: "45%", md: "50%", sm: "100%", xs: "100%" },
-                    opacity: "95%",
-                    background: "#FFF",
-                    height: "100vh",
-                    padding: { xs: "6rem 0.5rem", sm: "rem" }
-                }}
+                sx={{ width: { lg: "45%", md: "50%", sm: "100%", xs: "100%" }, opacity: "95%", background: "#FFF", height: "100vh" }}
+
             >
                 <Box sx={{ paddingBottom: { md: "1.5rem", sm: "1rem", xs: "0.5rem" }, paddingTop: "0rem" }}>
-                    <img src={Ukeylogo} height={"70px"} width={"143px"} alt="Logo" />
+                    <img src={Ukeylogo} height={"70px"} width={"143px"} />
                 </Box>
 
                 <Typography
                     variant="h1"
-                    mt={{ xl: "0em", lg: "0rem", md: "0.2rem", sm: "0.1rem", xs: "0.2rem" }}
-                    sx={{
-                        fontWeight: 600,
-                        fontSize: { xs: "1.5rem", md: "1.675rem" },
-                        fontFamily: "Inter",
-                        color: "#14181F",
-                    }}
+                    mt={"1em"}
+                    sx={{ fontWeight: 600, fontSize: "1.675rem", fontFamily: "Inter", color: "#14181F", }}
                 >
                     Register
                 </Typography>
@@ -225,7 +216,7 @@ function Signup() {
                     or continue with
                 </Typography>
                 <Stack mt={1} >
-                    <img src={GoogleLogo} alt="Google" />
+                    <img src={GoogleLogo} />
                 </Stack>
             </Box>
         </Box>

@@ -70,7 +70,7 @@ function Sidebar2({ onClose }) {
 
       <Divider sx={{ backgroundColor: "#F38712" }} />
 
-      <List>
+      <List sx={{ flexGrow: 1 }}>
         {listItems.map((item, index) => (
           <ListItem
             button
@@ -91,7 +91,7 @@ function Sidebar2({ onClose }) {
         ))}
       </List>
 
-      <Stack spacing={1} mt={26}>
+      <Stack spacing={1} mt={2}>
         <Divider sx={{ backgroundColor: "#F38712" }} />
         <Button
           variant="contained"
