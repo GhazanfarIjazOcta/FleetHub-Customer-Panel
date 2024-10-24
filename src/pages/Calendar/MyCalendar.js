@@ -238,7 +238,8 @@ function MyCalendar() {
       style: {
         backgroundColor: event.backgroundColor || "#D9EAD3",
         borderRadius: "5px",
-        color: "#fff",
+        color: "black",
+        
         display: "flex",
         alignItems: "center",
         padding: "5px",
@@ -264,6 +265,7 @@ function MyCalendar() {
           display: "flex",
           alignItems: "center",
           padding: "5px",
+          marginLeft:"30px",
           cursor: "pointer", // Make boxes clickable
           color: event.mainColor,
           fontSize: "14px"

@@ -35,31 +35,11 @@ function Sidebar() {
     setSelectedItem(index);
     navigate(route);
   };
-  // useEffect(() => {
-  //   setSelectedItem(0);
-  //   navigate("dashboard");
-  // }, []);
-  // console.log("selected items", selectedItem);
+
 
   const listItems = [
     { text: "Dashboard", icon: DashboardLogo, route: "dashboardmain" },
-    // { text: "User Management", icon: UserLogo, route: "user-management" },
-    // {
-    //   text: "Vehicle Management",
-    //   icon: VehicleLogo,
-    //   route: "vehicle-management",
-    // },
-    // {
-    //   text: "Device Management",
-    //   icon: DeviceLogo,
-    //   route: "device-management",
-    // },
-    // {
-    //   text: "Driver Management",
-    //   icon: DriverLogo,
-    //   route: "driver-management",
-    // },
-    // { text: "Trip Management", icon: TripLogo, route: "trip-management" },
+  
     {
       text: "Maintenance Scheduling",
       icon: MaintenanceLogo,
@@ -93,17 +73,7 @@ function Sidebar() {
           alignItems: "center",
         }}
       >
-        {/* <Box
-          height={"10vh"}
-          minHeight={"70px"}
-          maxWidth={"197px"}
-          overflow={"hidden"}
-          maxHeight={"289px"}
-          display={"flex"}
-          justifyContent={"center"}
-        >
-          <img src={Ukeylogo} alt="logo" width="85%" height={"100%"} />
-        </Box> */}
+        
         <Box
           sx={{
             width: "96%",
