@@ -484,6 +484,11 @@ export const settingStyles = {
     boxShadow: "none",
     height: "100%",
     width: "100%",
+
+ 
+    height: "88%",
+   
+    mb: 2
   },
   contactUsBox: {
     height: "95%",
@@ -491,9 +496,31 @@ export const settingStyles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+
+ 
+    
+    width: { lg: "95%", xs: "100%" },// Prevent overflowing horizontally and vertically
   },
-  contactUsContainer: { width: "100%", height: "90%", display: "flex" },
-  contactUsBoxWidth: { width: "50%" , direction: "column"},
+  contactUsContainer: { 
+    width: "100%", 
+    height: "90%", 
+    display: "flex",
+    flexDirection: {
+      xs: "column", // Stack vertically for mobile view
+      lg: "row", // Side by side for large screens
+    }, 
+    gap: { xs: 0, lg: 0 } // Add spacing between elements in mobile view
+  },
+  contactUsBoxWidth: { 
+    width: { 
+      xs: "70%", // Full width in mobile view
+      lg: "50%" // Half width in large screens
+    },
+
+    
+    
+    direction: "row"
+  },
   conatactUsLeftLabel: {
     fontSize: "36px",
     color: "#383C3E",
