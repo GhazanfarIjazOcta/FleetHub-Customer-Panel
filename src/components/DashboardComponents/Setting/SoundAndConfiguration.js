@@ -107,16 +107,23 @@ function SoundAndConfiguration() {
 
       sx={{
         ...settingStyles.policyBox,
-        paddingLeft: {
-            xs: '20px', // Padding for extra-small devices
-            lg: '40px', // Padding for large devices
-        },
+       
       }} 
       
       
-      pl={8}>
-        <Box>
-          <Box sx={settingStyles.policyEdit} pr={8}>
+      pl={0}>
+        <Box sx={{
+
+paddingLeft: {
+  xs: '40px', // Padding for extra-small devices
+  lg: '40px', // Padding for large devices
+},
+paddingRight: {
+  xs: '40px', // Padding for extra-small devices
+  lg: '40px', // Padding for large devices
+},
+        }}>
+          <Box sx={settingStyles.policyEdit} pr={0}>
             <img
               src={editIcon}
               width={"21px"}
@@ -162,7 +169,7 @@ function SoundAndConfiguration() {
                     min={0}
                     max={100}
                     valueLabelDisplay="auto"
-                    sx={{ width: "370px" ,  color: "orange", height: "20px" }} // Ensure it takes appropriate width
+                    sx={{ width: {lg:"340px" , xs:"200px"} ,  color: "orange", height: "20px" }} // Ensure it takes appropriate width
                   />
                   <PlusMinusButton
                     onClick={() => setVolume(Math.min(100, volume + 5))}
