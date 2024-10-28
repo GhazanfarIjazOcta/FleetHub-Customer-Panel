@@ -115,7 +115,7 @@ const ChatView = ({
 
 
   return (
-    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"85%" , xs:"85%"}}  position={{lg:"relative" , xs:"fixed"}}>
+    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"85%" , xs:"82%"}}  position={{lg:"relative" , xs:"fixed"}}>
       <Stack justifyContent={"space-between"} direction={"row"}>
         <Box sx={{ ...headerStyle }}>
           <Avatar
