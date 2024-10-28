@@ -4,11 +4,8 @@ import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Loader from "./components/UI/Loader";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Main from "./components/DashboardComponents/DashboardMain/DashboardMain";
-import UserManagment from "./components/DashboardComponents/User Managment/UserManagment";
-import VehicleManagment from "./components/DashboardComponents/Vehicle Managment/VehicleManagment";
-import DeviceManagment from "./components/DashboardComponents/Device Managment/DeviceManagment";
-import DriverManagment from "./components/DashboardComponents/DriverManagment/DriverManagment";
+
+
 import MaintenanceScheduling from "./components/DashboardComponents/MaintenanceScheduling/MaintenanceScheduling";
 import FuelManagment from "./components/DashboardComponents/FuelManagment/FuelManagment";
 import Setting from "./components/DashboardComponents/Setting/Setting";
