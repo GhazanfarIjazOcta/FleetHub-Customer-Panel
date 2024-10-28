@@ -156,7 +156,7 @@ function Sidebar() {
                 height: "3rem",
                 fontSize: "1rem",
                 backgroundColor: "white",
-                marginBottom: "1.5rem",
+                marginBottom: "2rem",
                 color: "black",
                 "&:hover": {
                   backgroundColor: "lightgray"

@@ -37,7 +37,7 @@ export const listItemStyles = {
 export const listItemIconStyle = { color: "white", minWidth: "35px" };
 export const logoutButtonContainer = {
   width: "100%",
-  marginBottom: "50px",
+  // marginBottom: "50px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -47,7 +47,7 @@ export const lineStyle = {
   height: "2px",
   backgroundColor: "#3D4149",
   color: "#3D4149",
-  marginBottom: "2em", // Space between the line and the button
+  marginBottom: "0.4em", // Space between the line and the button
 };
 export const logoutButtonStyle = {
   width: "80%",
