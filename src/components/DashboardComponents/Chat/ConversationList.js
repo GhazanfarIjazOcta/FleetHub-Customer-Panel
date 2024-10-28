@@ -68,7 +68,7 @@ import {
   ];
   
   const ConversationList = () => {
-    const [tabValue, setTabValue] = useState(0);
+    const [tabValue, setTabValue] = useState();
     const handleTabChange = (event, newValue) => {
       setTabValue(newValue);
     };
@@ -164,16 +164,17 @@ import {
         </Stack> */}
         <Tabs aria-label="Basic tabs" value={tabValue} onChange={handleTabChange}>
           <TabList>
+          <Tab sx={{ width: "100%" }}>
+              <Typography fontSize={"14px"} sx={{ fontFamily: "var(--main-font-family)" }}>
+                Private Chat
+              </Typography>
+            </Tab>
             <Tab style={{ width: "100%", padding: "0px" }}>
               <Typography fontSize={"14px"} sx={{ fontFamily: "var(--main-font-family)" }}>
                 Group Chat
               </Typography>
             </Tab>
-            <Tab sx={{ width: "100%" }}>
-              <Typography fontSize={"14px"} sx={{ fontFamily: "var(--main-font-family)" }}>
-                Private Chat
-              </Typography>
-            </Tab>
+            
           </TabList>
           <TabPanel style={{ padding: 0 }} value={0}>
             <List sx={{ width: "100%", maxWidth: { xl: 360 }, bgcolor: "background.paper" }}>

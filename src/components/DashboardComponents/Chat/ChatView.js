@@ -115,7 +115,7 @@ const ChatView = ({
 
 
   return (
-    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"90%" , xs:"78%"}}  position={{lg:"relative" , xs:"fixed"}}>
+    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"85%" , xs:"85%"}}  position={{lg:"relative" , xs:"fixed"}}>
       <Stack justifyContent={"space-between"} direction={"row"}>
         <Box sx={{ ...headerStyle }}>
           <Avatar
@@ -204,7 +204,7 @@ const ChatView = ({
                         bgcolor: isSender ? "#15294E  " : "#F2F2F2",
                         color: isSender ? "#FFFFFF" : "#000000",
                         borderRadius: isSender ? "10px 10px 0 10px" : "10px 10px 10px 0",
-                        py: 2,
+                        py: 1.5,
                         px: 3,
                         // color: "black",
                         maxWidth: "35%",
@@ -241,7 +241,7 @@ const ChatView = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          mb: 0,
+          mb: 1,
           ml: 2,
           mr: 2,
           
