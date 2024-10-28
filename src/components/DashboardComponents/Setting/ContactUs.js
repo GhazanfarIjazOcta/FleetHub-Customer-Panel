@@ -29,7 +29,7 @@ function ContactUs() {
           <Box sx={{...settingStyles.contactUsBoxWidth,
 
 paddingLeft: {
-  xs: "40px", // Padding for extra-small devices
+  xs: "50px", // Padding for extra-small devices
   lg: "40px", // Padding for large devices
 },
 
@@ -85,7 +85,7 @@ paddingLeft: {
             <Stack
               direction={{ lg: "row", xs: "column" }}
               justifyContent={"space-around"}
-              width={{ lg: "65%", xs: "20%" }}
+              width={{ lg: "65%", xs: "30%" }}
               mt={5}
             >
               <Box>
@@ -113,10 +113,10 @@ paddingLeft: {
             </Stack>
 
             <Stack
-              sx={settingStyles.contactUsButtonContainer}
-              mr={1}
-              mt={{ lg: 0, xs: 3 }}
-              mb={{ lg: 2, xs: 2 }}
+              direction={{ lg: "row", xs: "column" }}
+              justifyContent={"space-around"}
+              width={{ lg: "65%", xs: "20%" }}
+              mt={5}
             >
               <Button variant="contained" sx={settingStyles.contactUsButton}>
                 Send

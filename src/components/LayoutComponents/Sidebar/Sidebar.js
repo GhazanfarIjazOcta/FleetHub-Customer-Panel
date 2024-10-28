@@ -4,7 +4,7 @@ import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Ukeylogo from "../../../assets/Layout/Ukeylogo-removebg-preview.png";
 import DashboardLogo from "../../../assets/Layout/post.png";
-import AutoAwesomeMosaicOutlinedIcon from '@mui/icons-material/AutoAwesomeMosaicOutlined';
+import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
 import UserLogo from "../../../assets/Layout/user.png";
 import VehicleLogo from "../../../assets/Layout/fluent_vehicle-truck-cube-24-regular.png";
 import DeviceLogo from "../../../assets/Layout/ion_hardware-chip-outline.png";
@@ -23,7 +23,7 @@ import {
   listStyle,
   logoStyle,
   logoutButtonContainer,
-  logoutButtonStyle,
+  logoutButtonStyle
 } from "../../UI/Layout";
 import { useNavigate } from "react-router-dom";
 
@@ -36,28 +36,26 @@ function Sidebar() {
     navigate(route);
   };
 
-
   const listItems = [
     { text: "Dashboard", icon: DashboardLogo, route: "dashboardmain" },
-  
+
     {
       text: "Maintenance Scheduling",
       icon: MaintenanceLogo,
-      route: "maintenance-scheduling",
+      route: "maintenance-scheduling"
     },
     { text: "Fuel Management", icon: FuelLogo, route: "fuel-management" },
-    { text: "Setting", icon: SettingLogo, route: "setting" },
+    { text: "Setting", icon: SettingLogo, route: "setting" }
   ];
   return (
     <Box
       flex={2}
-        // sx={{ backgroundColor: "red" }}
+      // sx={{ backgroundColor: "red" }}
       display={{ xs: "none", lg: "flex" }}
       height={"100vh"}
       flexDirection={"column"}
       justifyContent={"space-between"}
       alignItems={"center"}
-      
     >
       <Box
         sx={{
@@ -70,10 +68,9 @@ function Sidebar() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: "center"
         }}
       >
-        
         <Box
           sx={{
             width: "96%",
@@ -85,22 +82,23 @@ function Sidebar() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "center"
           }}
           mt={2}
         >
-          
           <Box sx={listStyle} mt={"0.2em"}>
-          <img src={Ukeylogo} alt="logo" 
-          style={{
-            width: "100%",        // The image will scale to 100% of the container's width
-            height: "auto",       // The image will scale to 100% of the container's height
-            maxWidth: "100%",     // Prevent overflow beyond the box
-            maxHeight: "100%",    // Prevent overflow beyond the box
-            objectFit: "contain"  // Maintain aspect ratio and prevent distortion
-
-          }}    />
-          <Divider sx={{ backgroundColor: "#F38712" }} />
+            <img
+              src={Ukeylogo}
+              alt="logo"
+              style={{
+                width: "100%", // The image will scale to 100% of the container's width
+                height: "auto", // The image will scale to 100% of the container's height
+                maxWidth: "100%", // Prevent overflow beyond the box
+                maxHeight: "100%", // Prevent overflow beyond the box
+                objectFit: "contain" // Maintain aspect ratio and prevent distortion
+              }}
+            />
+            <Divider sx={{ backgroundColor: "#F38712" }} />
             <List>
               {listItems.map((item, index) => (
                 <ListItem
@@ -113,8 +111,8 @@ function Sidebar() {
                       selectedItem === index ? "#F38712" : "transparent",
                     "&:hover": {
                       backgroundColor:
-                        selectedItem === index ? "#F38712" : "#3D4149",
-                    },
+                        selectedItem === index ? "#F38712" : "#3D4149"
+                    }
                   }}
                 >
                   <ListItemIcon sx={listItemIconStyle}>
@@ -132,7 +130,7 @@ function Sidebar() {
                       fontSize: "0.9rem",
                       fontFamily: "Poppins",
                       display: { xs: "block", lg: "block" },
-                      noWrap: false,
+                      noWrap: false
                     }}
                   />
                 </ListItem>
@@ -161,8 +159,8 @@ function Sidebar() {
                 marginBottom: "1.5rem",
                 color: "black",
                 "&:hover": {
-                  backgroundColor: "lightgray",
-                },
+                  backgroundColor: "lightgray"
+                }
               }}
               onClick={() => navigate("/login")}
             >
@@ -170,7 +168,6 @@ function Sidebar() {
             </Button>
           </Stack>
         </Box>
-
       </Box>
     </Box>
   );
