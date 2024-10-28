@@ -104,7 +104,7 @@ const ChatView = ({
 
 
   return (
-    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"80%" , xs:"78%"}}  position={{lg:"relative" , xs:"fixed"}}>
+    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"90%" , xs:"78%"}}  position={{lg:"relative" , xs:"fixed"}}>
       <Stack justifyContent={"space-between"} direction={"row"}>
         <Box sx={{ ...headerStyle }}>
           <Avatar
@@ -228,9 +228,10 @@ const ChatView = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          mb: 1,
+          mb: 0,
           ml: 2,
           mr: 2,
+          
         }}
       >
         <label htmlFor="file-input">
