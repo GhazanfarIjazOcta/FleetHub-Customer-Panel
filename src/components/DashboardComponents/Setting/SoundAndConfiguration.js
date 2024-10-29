@@ -201,11 +201,11 @@ paddingRight: {
         </Box>
 
         <Stack sx={settingStyles.policyButtonContainer} mr={5}>
-          <Button variant="outlined" sx={settingStyles.policyDisagree}>
+          {/* <Button variant="outlined" sx={settingStyles.policyDisagree}>
             Disagree
-          </Button>
+          </Button> */}
           <Button variant="contained" sx={settingStyles.policyAcceptAll}>
-            Accept All
+            Accept
           </Button>
         </Stack>
       </Box>
