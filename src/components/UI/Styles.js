@@ -8,7 +8,7 @@ export const RegistrationStyles = {
             fontSize: "0.8rem",
             color: "#14181F",
             fontFamily: 'Inter',
-            margin: { lg: "0.5rem 0rem 1rem 0rem", xs: "0.5rem 0rem 0.5rem 0rem" },
+            margin: { xl: "0rem 0rem 1rem 0rem" ,lg: "0rem 0rem 0.5rem 0rem" , md: "0rem 0rem 0rem 0rem", xs: "0.5rem 0rem 0.5rem 0rem" },
             '& input::placeholder': {
                 color: '#6F7C8E',
                 opacity: 1,

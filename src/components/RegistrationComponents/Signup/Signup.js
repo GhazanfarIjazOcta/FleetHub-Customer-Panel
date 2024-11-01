@@ -61,41 +61,71 @@ function Signup() {
                 sx={{ width: { lg: "45%", md: "50%", sm: "100%", xs: "100%" }, opacity: "95%", background: "#FFF", height: "100vh" }}
 
             >
-                <Box sx={{ paddingBottom: { md: "1.5rem", sm: "1rem", xs: "0.5rem" }, paddingTop: "0rem" }}>
-                    <img src={Ukeylogo} height={"70px"} width={"143px"} />
-                </Box>
+
+<Box 
+    sx={{ 
+        paddingBottom: { xl: "0rem", lg: "0rem", md: "0rem", sm: "1rem", xs: "0.5rem" }, 
+        paddingTop: { xl: "0rem", lg: "0rem", md: "5rem", sm: "1rem", xs: "0.5rem" }
+    }}
+>
+    <img 
+        src={Ukeylogo} 
+        alt="Ukey Logo" // Provide a meaningful alt text
+        style={{ 
+            height: {xl:"100%" , lg:"100%" , md:"60%" , sm:"60%" , xs:"60%"}, // Maintain aspect ratio
+            width: "100%",   // Make image responsive
+        }} 
+        // Use the sx prop for responsive styling instead of inline styles
+        sx={{ 
+            maxHeight: { xl: "143px", lg: "65px", md: "20px", sm: "55px", xs: "50px" }, // Set max height based on screen size
+            maxWidth: { xl: "200px", lg: "80px", md: "20px", sm: "115px", xs: "105px" } // Set max width based on screen size
+        }}
+    />
+</Box>
+
+
+
 
                 <Typography
                     variant="h1"
-                    mt={"1em"}
-                    sx={{ fontWeight: 600, fontSize: "1.675rem", fontFamily: "Inter", color: "#14181F", }}
+                    mt={{ xl: "0em", lg: "-1em", md: "0em", sm: "1em", xs: "0.8em" }} // Responsive margin-top
+                       sx={{ fontWeight: 600, 
+                        fontSize: { xl: "1.675rem", lg: "1.2rem", md: "0.7rem", sm: "1.25rem", xs: "1.6rem" }, // Responsive font size
+                        
+                        fontFamily: "Inter", color: "#14181F", }}
                 >
                     Register
                 </Typography>
-                <Stack direction={{ xs: "column", sm: "row" }} gap={"3px"} mt={1}>
+                <Stack direction={{ xs: "column", sm: "row" }} gap={"3px"} >
                     <Typography
                         sx={{
                             fontFamily: "Inter",
                             color: "#14181F",
                             textAlign: "center",
+                            fontSize: { xl: "1rem", lg: "0.8rem", md: "0.7rem", sm: "1rem", xs: "1rem" },
                         }}
                     >
                         Already have an account?
                     </Typography>
                     <Typography
                         color={"#F38712"}
+                        sx={{
+                            fontSize: { xl: "1rem", lg: "0.8rem", md: "0.7rem", sm: "1rem", xs: "1rem" },
+                        }}
                         style={{
                             fontWeight: 600,
                             fontFamily: "Inter",
                             cursor: "pointer",
                             textAlign: "center",
+                           
                         }}
                         onClick={loginNavigation}
                     >
                         Login here
                     </Typography>
                 </Stack>
-                <Box sx={{ width: { xs: "80%", sm: "60%" }, maxWidth: "370px", pt: "1.5rem" }}>
+
+                <Box sx={{ width: { xs: "80%", sm: "60%" }, maxWidth: "370px",  }}>
                     <Typography
                         variant="subtitle1"
                         sx={{
@@ -190,7 +220,7 @@ function Signup() {
                         height: "3.1rem",
                         backgroundColor: "#212122;",
                         color: "white",
-                        marginTop: "1.8em",
+                        // marginTop: "1.8em",
                         textTransform: "none",
                         "&:hover": {
                             backgroundColor: "#212122",
@@ -202,22 +232,24 @@ function Signup() {
                 </Button>
                 <Typography
                     variant="body1"
-                    mt={2}
-                    mb={1}
+                   
+                    
                     color={"#6F7C8E"}
                     sx={{
                         fontWeight: 500,
                         fontSize: "1rem",
                         fontFamily: "Poppins",
                         cursor: "pointer",
-                        marginTop: { md: "1.5rem", sm: "1rem", xs: "0.5rem" }
+                        marginTop: { md: "0.3rem", sm: "1rem", xs: "0.5rem" }
                     }}
                 >
                     or continue with
                 </Typography>
-                <Stack mt={1} >
+                <Stack  >
                     <img src={GoogleLogo} />
                 </Stack>
+
+                  
             </Box>
         </Box>
     );
