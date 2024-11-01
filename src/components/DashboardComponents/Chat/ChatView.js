@@ -25,6 +25,7 @@ const dummyMessages = [
         id: 1, // This could be your user ID
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
     },
     {
       id: 2,
@@ -33,6 +34,7 @@ const dummyMessages = [
         id: 2, // This is the other user's ID
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
     },
     {
       id: 3,
@@ -41,6 +43,7 @@ const dummyMessages = [
         id: 1, // This is your message
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
     },
     {
       id: 4,
@@ -49,6 +52,7 @@ const dummyMessages = [
         id: 2, // This is the other user's message
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
     },
     {
       id: 5,
@@ -57,6 +61,7 @@ const dummyMessages = [
         id: 1, // This is another message from you
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
     },
     {
       id: 6,
@@ -65,6 +70,7 @@ const dummyMessages = [
         id: 2, // Another message from the other user
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
     },
     {
       id: 7,
@@ -73,6 +79,25 @@ const dummyMessages = [
         id: 1, // Another message from you
         image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
       },
+      chatid: 1
+    },
+    {
+      id: 1,
+      content: "Hello! How are you?",
+      User: {
+        id: 1, // This could be your user ID
+        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
+      },
+      chatid: 2
+    },
+    {
+      id: 2,
+      content: "I'm good, thanks! How about you?",
+      User: {
+        id: 2, // This is the other user's ID
+        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
+      },
+      chatid: 2
     },
   ];
 
@@ -83,6 +108,7 @@ const ChatView = ({
     
   },
   chatUser = {
+    id: 1,
     firstName: "Alice", 
     lastName: "Bowam", 
     image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
@@ -111,7 +137,9 @@ const ChatView = ({
   // Use dummy messages if messages prop is empty
   const chatMessages = messages.length > 0 ? messages : dummyMessages;
   const chatuserImage = chatUser?.image || "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg" ;
+const chatid1 = dummyMessages[0].chatid;
 
+console.log("here is the chatid " , chatid1)
 
 
   return (

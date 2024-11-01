@@ -31,26 +31,7 @@ import {
     mb: 1
   };
   
-  const dummyTeam = [
-    {
-      userId: "1",
-      firstName: "Alice",
-      lastName: "Smith",
-      image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-    },
-    {
-      userId: "2",
-      firstName: "Bob",
-      lastName: "Johnson",
-      image: "https://via.placeholder.com/25",
-    },
-    {
-      userId: "3",
-      firstName: "Charlie",
-      lastName: "Brown",
-      image: "https://via.placeholder.com/25",
-    },
-  ];
+
   
   const dummyConversations = [
     {
@@ -162,8 +143,8 @@ import {
             </Select>
           </Button>
         </Stack> */}
-        <Tabs aria-label="Basic tabs" value={tabValue} onChange={handleTabChange}>
-          <TabList>
+        <Tabs aria-label="Basic tabs"  onChange={handleTabChange}>
+          {/* <TabList>
           <Tab sx={{ width: "100%" }}>
               <Typography fontSize={"14px"} sx={{ fontFamily: "var(--main-font-family)" }}>
                 Private Chat
@@ -175,8 +156,8 @@ import {
               </Typography>
             </Tab>
             
-          </TabList>
-          <TabPanel style={{ padding: 0 }} value={0}>
+          </TabList> */}
+          {/* <TabPanel style={{ padding: 0 }} value={0}>
             <List sx={{ width: "100%", maxWidth: { xl: 360 }, bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start" style={{ fontFamily: "var(--main-font-family)", paddingTop: 0 }}>
                 <ListItemAvatar>
@@ -192,8 +173,8 @@ import {
               </ListItem>
               <Divider />
             </List>
-          </TabPanel>
-          <TabPanel style={{ padding: 0 }} value={1}>
+          </TabPanel> */}
+          <TabPanel style={{ padding: 0 }} >
             <List sx={{ fontFamily: "var(--main-font-family)", width: "100%", maxWidth: { xl: 360 }, bgcolor: "background.paper" }}>
               {dummyConversations.map((conversation) => (
                 <ConversationCard key={conversation.ChatConversation.id} conversation={conversation} />

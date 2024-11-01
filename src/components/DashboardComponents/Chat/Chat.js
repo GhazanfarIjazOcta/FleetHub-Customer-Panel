@@ -14,6 +14,7 @@ import ConversationList from "./ConversationList";
 import { useParams } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { ChatStyles } from "./ChatStyles";
 
 const Chat = () => {
   // Hook for theme and responsive checks
@@ -58,38 +59,15 @@ const Chat = () => {
 
   return (
     <Box
-      sx={{
-        height: { lg: "83%", xs: "90%" },
-        borderRadius: "4px",
-
-        position: "fixed",
-        mt: { xs: 11, sm: 12, md: 12, lg: 12 },
-        // Adjust padding based on the screen size
-        px: { xs: 2, sm: 2, md: 2, lg: 0 }, // Remove padding at larger screens where sidebar becomes toggle
-        ml: { xs: 0, sm: 0, md: 0, lg: 0, xl: 0 }, // Leave space for the sidebar on larger screens
-        overflow: "none", // Prevent overflowing horizontally and vertically
-        width: "99%", // Ensure it takes full width
-        width: { lg: "81.5%", xs: "90%" }, // Ensure it takes full width
-        // maxWidth: "1200px", // Set a max width as needed>
-        //             background: "#F8DE7E",
-        //   background: "#F8F8FF",
-        background: "#ffffff",
-        overflow: "none",
-
-        boxShadow: 2,
-      }}
+      sx={
+        ChatStyles.mainChatStyles
+      }
     >
       <Grid container>
         {matchesMdDown && (
            <Grid item xs={1}>
            <IconButton
-             sx={{
-               ml: {
-                 xs: 33,  // For mobile width around 320px
-                 sm: 44,  // For mobile width around 375px
-                 md: 46   // For mobile width around 425px and larger
-               }
-             }}
+             sx={ChatStyles.iconbox}
              color="inherit"
              aria-label={drawerOpen ? "close drawer" : "open drawer"}
              onClick={handleToggleDrawer}
