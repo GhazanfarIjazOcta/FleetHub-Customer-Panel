@@ -44,15 +44,27 @@ import {
       ChatConversation: { id: "2" },
       firstName: "Bob",
       lastMessage: { content: "Are we still on for the meeting?" },
-      image: "https://via.placeholder.com/50",
+      image: "https://res.cloudinary.com/dnfc9g33c/image/upload/v1730443621/bob_m1bra7.jpg",
     },
   ];
   
-  const ConversationList = () => {
+  const ConversationList = ({onConversationSelect , chatId, setChatId}) => {
     const [tabValue, setTabValue] = useState();
     const handleTabChange = (event, newValue) => {
       setTabValue(newValue);
     };
+
+    //getting id from grandchilderen
+    const handleConversationClick = (id) => {
+      console.log("Selected Conversation ID:", id);
+      // Additional functionality when a conversation is clicked can go here
+      if (onConversationSelect) {
+        onConversationSelect(id); // Send ID to parent component
+      }
+
+    };
+
+    
   
     return (
       <Stack >
@@ -177,7 +189,7 @@ import {
           <TabPanel style={{ padding: 0 }} >
             <List sx={{ fontFamily: "var(--main-font-family)", width: "100%", maxWidth: { xl: 360 }, bgcolor: "background.paper" }}>
               {dummyConversations.map((conversation) => (
-                <ConversationCard key={conversation.ChatConversation.id} conversation={conversation} />
+                <ConversationCard key={conversation.ChatConversation.id} conversation={conversation} onConversationClick={handleConversationClick} chatId={chatId} setChatId={setChatId} />
               ))}
             </List>
           </TabPanel>
