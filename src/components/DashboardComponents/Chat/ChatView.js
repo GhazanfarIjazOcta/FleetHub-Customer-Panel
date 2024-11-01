@@ -8,7 +8,7 @@ import {
   IconButton,
   CircularProgress,
   TextField,
-  Modal,
+  Modal
 } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
@@ -18,102 +18,112 @@ import { headerStyle } from "./ChatStyles";
 
 // Dummy chat messages for testing
 const dummyMessages = [
-    {
-      id: 1,
-      content: "Hello! How are you?",
-      User: {
-        id: 1, // This could be your user ID
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+  {
+    id: 1,
+    content: "Hello! How are you?",
+    User: {
+      id: 1, // This could be your user ID
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 2,
-      content: "I'm good, thanks! How about you?",
-      User: {
-        id: 2, // This is the other user's ID
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+    chatid: 1
+  },
+  {
+    id: 2,
+    content: "I'm good, thanks! How about you?",
+    User: {
+      id: 2, // This is the other user's ID
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 3,
-      content: "Have you completed the project we discussed?",
-      User: {
-        id: 1, // This is your message
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+    chatid: 1
+  },
+  {
+    id: 3,
+    content: "Have you completed the project we discussed?",
+    User: {
+      id: 1, // This is your message
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 4,
-      content: "Yes, I just finished it yesterday. I will send it over.",
-      User: {
-        id: 2, // This is the other user's message
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+    chatid: 1
+  },
+  {
+    id: 4,
+    content: "Yes, I just finished it yesterday. I will send it over.",
+    User: {
+      id: 2, // This is the other user's message
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 5,
-      content: "Great! Looking forward to seeing it.",
-      User: {
-        id: 1, // This is another message from you
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+    chatid: 1
+  },
+  {
+    id: 5,
+    content: "Great! Looking forward to seeing it.",
+    User: {
+      id: 1, // This is another message from you
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 6,
-      content: "Let me know if you need anything else.",
-      User: {
-        id: 2, // Another message from the other user
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+    chatid: 1
+  },
+  {
+    id: 6,
+    content: "Let me know if you need anything else.",
+    User: {
+      id: 2, // Another message from the other user
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 7,
-      content: "Thanks for your help!",
-      User: {
-        id: 1, // Another message from you
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 1
+    chatid: 1
+  },
+  {
+    id: 7,
+    content: "Thanks for your help!",
+    User: {
+      id: 1, // Another message from you
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 1,
-      content: "Hello! How are you?",
-      User: {
-        id: 1, // This could be your user ID
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 2
+    chatid: 1
+  },
+  {
+    id: 1,
+    content: "Hello! How are you?",
+    User: {
+      id: 1, // This could be your user ID
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-    {
-      id: 2,
-      content: "I'm good, thanks! How about you?",
-      User: {
-        id: 2, // This is the other user's ID
-        image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg",
-      },
-      chatid: 2
+    chatid: 2
+  },
+  {
+    id: 2,
+    content: "I'm good, thanks! How about you?",
+    User: {
+      id: 2, // This is the other user's ID
+      image:
+        "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
     },
-  ];
+    chatid: 2
+  }
+];
 
 const ChatView = ({
-  currentUser  = { 
-    id: 2 , 
-    image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730104832/adminlogo2_ghz4jq.webp"
-    
+  currentUser = {
+    id: 2,
+    image:
+      "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730104832/adminlogo2_ghz4jq.webp"
   },
   chatUser = {
     id: 1,
-    firstName: "Alice", 
-    lastName: "Bowam", 
-    image: "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
+    firstName: "Alice",
+    lastName: "Bowam",
+    image:
+      "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg"
   },
-  
+
   // messages = [], // Default to empty array
   isLoadingChat,
   message,
@@ -122,86 +132,50 @@ const ChatView = ({
   handleImageUpload,
   handleCloseModal,
   openModal,
-  image ,
+  image,
   loading,
-  projectName ="Alicee",
+  projectName = "Alicee",
   selectedConversationId,
-  chatId, setChatId
-  
+  chatId,
+  setChatId
 }) => {
+  const chatuserImage =
+    "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg";
 
+  const [messages, setMessages] = useState([]);
 
-
-  
-
-
-
-  // const [messages, setMessages1] = useState(dummyMessages);
-
-  // Use dummy messages if messages prop is empty
-  // const chatMessages = messages.length > 0 ? messages : dummyMessages;
-  // const chatMessages = messages.filter(msg => msg.chatid === selectedConversationId);
-  const chatuserImage =  "https://res.cloudinary.com/dnfc9g33c/image/upload/t_Profile/v1730103376/R_kol7ep.jpg" ;
-// const selectedChatId = dummyMessages[0].chatid;
-
-// const [selectedChatId, setSelectedChatId] = useState(chatId);
-const [messages, setMessages] = useState([]);
-
-// Update selectedChatId when selectedConversationId changes
-// useEffect(() => {
-//   setSelectedChatId(chatId);
-// }, [chatId]);
-
-
-// Filter messages based on the current selectedChatId
-useEffect(() => {
-  if (chatId) {
-    const filteredMessages = dummyMessages.filter((msg) => msg.chatid == chatId);
-    setMessages(filteredMessages);
-    console.log("Filtered Messages:", filteredMessages);
-  } else {
-    console.log("No valid chat selected");
-    setMessages([]);
-  }
-}, [chatId]);
-
-
-// useEffect(() => {
-//   const filteredMessages = dummyMessages.filter(
-//     (msg) => msg.chatid === selectedChatId
-//   );
-//   setMessages(filteredMessages);
-// }, [selectedChatId]);
-
-// Second useEffect - Runs only after messages are updated by the first useEffect
-// useEffect(() => {
-//   if (messages.length > 0) {
-//     console.log("Second useEffect triggered after messages update:", messages);
-//     // Additional code to run after the first useEffect finishes
-//   }
-// }, [messages]);
-
-
+  useEffect(() => {
+    if (chatId) {
+      const filteredMessages = dummyMessages.filter(
+        (msg) => msg.chatid == chatId
+      );
+      setMessages(filteredMessages);
+      console.log("Filtered Messages:", filteredMessages);
+    } else {
+      console.log("No valid chat selected");
+      setMessages([]);
+    }
+  }, [chatId]);
 
   return (
-    <Stack direction={"column"} justifyContent={"flex-start"} height={{lg:"85%" , xs:"82%"}}  position={{lg:"relative" , xs:"fixed"}}>
+    <Stack
+      direction={"column"}
+      justifyContent={"flex-start"}
+      height={{ lg: "85%", xs: "82%" }}
+      position={{ lg: "relative", xs: "fixed" }}
+    >
       <Stack justifyContent={"space-between"} direction={"row"}>
-        <Box sx={headerStyle.head }>
-          <Avatar
-            src={chatuserImage   }
-            sx={{ marginRight: "1rem" }}
-            
-          />
-          {console.log("here is the chat user ",messages )}
+        <Box sx={headerStyle.head}>
+          <Avatar src={chatuserImage} sx={{ marginRight: "1rem" }} />
+          {console.log("here is the chat user ", messages)}
           <Typography
             sx={{
               fontFamily: "var(--main-font-family)",
               fontSize: { xl: "15px", lg: "12px", md: "15px", xs: "15px" },
-              fontWeight: 600,
+              fontWeight: 600
             }}
           >
-            {/* {projectName ||  `${chatUser?.firstName} ${chatUser?.lastName}`} */}
-            {projectName ||  ` ${"Alice"} `}
+            {projectName || ` ${"Alice"} `}
           </Typography>
           <IconButton>
             <FiberManualRecordIcon sx={{ fontSize: 15, color: "#3B9434" }} />
@@ -215,7 +189,7 @@ useEffect(() => {
           overflowY: "scroll",
           padding: 2,
           bgcolor: "#FAFAFA",
-          borderRadius: "8px",
+          borderRadius: "8px"
         }}
       >
         {isLoadingChat ? (
@@ -232,7 +206,7 @@ useEffect(() => {
               padding: 2,
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             <IconButton onClick={handleCloseModal}>
@@ -246,119 +220,68 @@ useEffect(() => {
                 height: "400px",
                 objectFit: "contain",
                 boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)",
-                filter: loading ? "blur(5px)" : "",
+                filter: loading ? "blur(5px)" : ""
               }}
             />
           </Box>
         ) : (
-
-
-
           <Box>
-          {messages.length > 0 ? (
-            messages.map((msg) => {
-              const isSender = msg?.User?.id === currentUser?.id;
-              return (
-                <Box
-                  key={msg?.id}
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-end",
-                    justifyContent: isSender ? "flex-end" : "flex-start",
-                    marginBottom: 2,
-                  }}
-                >
-                  {!isSender && (
-                    <Avatar src={msg?.User?.image} sx={{ width: 25, height: 25, marginRight: 1 }} />
-                  )}
+            {messages.length > 0 ? (
+              messages.map((msg) => {
+                const isSender = msg?.User?.id === currentUser?.id;
+                return (
                   <Box
+                    key={msg?.id}
                     sx={{
-                      bgcolor: isSender ? "#15294E" : "#F2F2F2",
-                      color: isSender ? "#FFFFFF" : "#000000",
-                      borderRadius: isSender ? "10px 10px 0 10px" : "10px 10px 10px 0",
-                      py: 1.5,
-                      px: 3,
-                      maxWidth: "35%",
-                      wordWrap: "break-word",
+                      display: "flex",
+                      alignItems: "flex-end",
+                      justifyContent: isSender ? "flex-end" : "flex-start",
+                      marginBottom: 2
                     }}
                   >
-                    {msg.content}
+                    {!isSender && (
+                      <Avatar
+                        src={msg?.User?.image}
+                        sx={{ width: 25, height: 25, marginRight: 1 }}
+                      />
+                    )}
+                    <Box
+                      sx={{
+                        bgcolor: isSender ? "#15294E" : "#F2F2F2",
+                        color: isSender ? "#FFFFFF" : "#000000",
+                        borderRadius: isSender
+                          ? "10px 10px 0 10px"
+                          : "10px 10px 10px 0",
+                        py: 1.5,
+                        px: 3,
+                        maxWidth: "35%",
+                        wordWrap: "break-word"
+                      }}
+                    >
+                      {msg.content}
+                    </Box>
+                    {isSender && (
+                      <Avatar
+                        src={currentUser?.image}
+                        sx={{ width: 25, height: 25, marginLeft: 1 }}
+                      />
+                    )}
                   </Box>
-                  {isSender && (
-                    <Avatar src={currentUser?.image} sx={{ width: 25, height: 25, marginLeft: 1 }} />
-                  )}
-                </Box>
-              );
-            })
-          ) : (
-            <Typography sx={{
-              fontFamily: "var(--main-font-family)",
-              marginLeft: "1rem",
-              justifyContent: "center",
-              display: "flex",
-            }}>
-              No chat available...
-            </Typography>
-          )}
-        </Box>
-        
-
-//           <Box>
-//             {selectedChatId}
-//   {chatMessages.length ? (
-//     chatMessages
-//     .filter((msg) => msg.chatid === selectedChatId)
-//     // Filter messages by selected chatId
-//       .map((msg) => {
-//         const isSender = msg?.User?.id === currentUser?.id;
-//         return (
-//           <Box
-//             key={msg?.id}
-//             sx={{
-//               display: "flex",
-//               alignItems: "flex-end",
-//               justifyContent: isSender ? "flex-end" : "flex-start",
-//               marginBottom: 2,
-//             }}
-//           >
-//             {!isSender && (
-//               <Avatar src={msg?.User?.image} sx={{ width: 25, height: 25, marginRight: 1 }} />
-//             )}
-//             <Box
-//               sx={{
-//                 bgcolor: isSender ? "#15294E" : "#F2F2F2",
-//                 color: isSender ? "#FFFFFF" : "#000000",
-//                 borderRadius: isSender ? "10px 10px 0 10px" : "10px 10px 10px 0",
-//                 py: 1.5,
-//                 px: 3,
-//                 maxWidth: "35%",
-//                 wordWrap: "break-word",
-//               }}
-//             >
-//               {msg.content}
-//             </Box>
-//             {isSender && (
-//               <Avatar src={currentUser?.image} sx={{ width: 25, height: 25, marginLeft: 1 }} />
-//             )}
-//           </Box>
-//         );
-//       })
-//   ) : (
-//     <Typography
-//       sx={{
-//         fontFamily: "var(--main-font-family)",
-//         marginLeft: "1rem",
-//         justifyContent: "center",
-//         display: "flex",
-//       }}
-//     >
-//       No chat available...
-//     </Typography>
-//   )}
-// </Box>
-
-
-
+                );
+              })
+            ) : (
+              <Typography
+                sx={{
+                  fontFamily: "var(--main-font-family)",
+                  marginLeft: "1rem",
+                  justifyContent: "center",
+                  display: "flex"
+                }}
+              >
+                No chat available...
+              </Typography>
+            )}
+          </Box>
         )}
       </Box>
       <Box
@@ -368,11 +291,10 @@ useEffect(() => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          mb: {lg:0 , xs:1},
+          mb: { lg: 0, xs: 2 },
           ml: 2,
           mr: 2,
-          mt: 1,
-          
+          mt: 1
         }}
       >
         <label htmlFor="file-input">

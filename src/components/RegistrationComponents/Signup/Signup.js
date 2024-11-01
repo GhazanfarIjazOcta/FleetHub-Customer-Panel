@@ -88,7 +88,7 @@ function Signup() {
 
                 <Typography
                     variant="h1"
-                    mt={{ xl: "0em", lg: "-1em", md: "0em", sm: "1em", xs: "0.8em" }} // Responsive margin-top
+                    mt={{ xl: "1em", lg: "-1em", md: "0em", sm: "1em", xs: "0.8em" }} // Responsive margin-top
                        sx={{ fontWeight: 600, 
                         fontSize: { xl: "1.675rem", lg: "1.2rem", md: "0.7rem", sm: "1.25rem", xs: "1.6rem" }, // Responsive font size
                         
@@ -240,12 +240,14 @@ function Signup() {
                         fontSize: "1rem",
                         fontFamily: "Poppins",
                         cursor: "pointer",
-                        marginTop: { md: "0.3rem", sm: "1rem", xs: "0.5rem" }
+                        marginTop: {xl:"1em" , lg:"1em" , md: "0.3rem", sm: "1rem", xs: "0.5rem" }
                     }}
                 >
                     or continue with
                 </Typography>
-                <Stack  >
+                <Stack 
+                mt={{ xl: "1em", lg: "0em", md: "0em", sm: "0em", xs: "0em" }} 
+                 >
                     <img src={GoogleLogo} />
                 </Stack>
 
